@@ -1,0 +1,14 @@
+{
+    // VS Code Python Debug Config for Inventory Tracker
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Run Inventory Tracker",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/Inventory_Tracker/main.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/Inventory_Tracker"
+        }
+    ]
+}

@@ -1,0 +1,78 @@
+fastapi_app/
+│
+├── app/
+│   ├── __init__.py
+│   ├── main.py                # Entry point (FastAPI app starts here)
+│   │
+│   ├── api/                   # All routes / endpoints
+│   │   ├── __init__.py
+│   │   ├── v1/
+│   │   │   ├── __init__.py
+│   │   │   ├── routes_users.py
+│   │   │   ├── routes_items.py
+│   │   │   └── ...
+│   │   └── v2/ (optional future version)
+│   │
+│   ├── core/                  # Core configurations
+│   │   ├── __init__.py
+│   │   ├── config.py          # Environment variables, settings
+│   │   ├── security.py        # JWT, Auth logic
+│   │   └── logging_config.py  # Logging setup (optional)
+│   │
+│   ├── models/                # Database models (SQLAlchemy, etc.)
+│   │   ├── __init__.py
+│   │   ├── user_model.py
+│   │   ├── item_model.py
+│   │   └── ...
+│   │
+│   ├── schemas/               # Pydantic models (Request/Response validation)
+│   │   ├── __init__.py
+│   │   ├── user_schema.py
+│   │   ├── item_schema.py
+│   │   └── ...
+│   │
+│   ├── services/              # Business logic (CRUD, etc.)
+│   │   ├── __init__.py
+│   │   ├── user_service.py
+│   │   ├── item_service.py
+│   │   └── ...
+│   │
+│   ├── db/                    # Database setup and session management
+│   │   ├── __init__.py
+│   │   ├── base.py            # Base model (for SQLAlchemy)
+│   │   ├── session.py         # create_engine, SessionLocal
+│   │   └── init_db.py
+│   │
+│   ├── utils/                 # Helper functions (e.g., email, hashing)
+│   │   ├── __init__.py
+│   │   ├── hash.py
+│   │   ├── email_helper.py
+│   │   └── ...
+│   │
+│   └── tests/                 # Unit and integration tests
+│       ├── __init__.py
+│       ├── test_users.py
+│       └── ...
+│
+├── requirements.txt
+├── .env                       # Environment variables
+├── alembic/                   # If using Alembic migrations
+├── alembic.ini
+└── README.md
+
+
+    Example Flow -> 
+
+    main.py → imports router from api/v1/routes_users.py
+
+    routes_users.py → handles endpoints (/users, /users/{id})
+
+    user_service.py → contains logic to fetch/add/update user
+
+    user_model.py → defines SQLAlchemy User table
+
+    user_schema.py → defines Pydantic models for request/response
+
+    session.py → creates database connection
+
+    config.py → loads .env variables via pydantic.BaseSettings

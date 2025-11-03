@@ -1,0 +1,40 @@
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-py"
+}
+
+model Category {
+  id       Int       @id @default(autoincrement())
+  name     String    @unique @db.VarChar(255)
+  products Product[]
+
+  @@map("categories")
+}
+
+model Company {
+  id          Int       @id @default(autoincrement())
+  name        String    @unique @db.VarChar(255)
+  description String?   @db.VarChar(500)
+  products    Product[] @relation("CompanyProducts", onDelete: Cascade)
+
+  @@map("companies")
+}
+
+model Product {
+  id          Int       @id @default(autoincrement())
+  name        String    @unique @db.VarChar(255)
+  description String?   @db.VarChar(500)
+  price       Float
+  company_id  Int
+  category_id Int
+
+  company  Company  @relation("CompanyProducts", fields: [company_id], references: [id])
+  category Category @relation(fields: [category_id], references: [id])
+
+  @@map("products")
+}

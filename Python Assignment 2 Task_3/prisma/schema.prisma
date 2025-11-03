@@ -1,0 +1,17 @@
+
+generator client {
+  provider = "prisma-client-py"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Product{
+  id    Int       @id @default(autoincrement())
+  name  String
+  price Int
+  stock Int
+}

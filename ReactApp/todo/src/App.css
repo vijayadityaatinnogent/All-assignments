@@ -1,0 +1,153 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.app-container {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 600px;
+  max-width: 90%;
+  margin-top: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+/* Form Styling */
+.todo-form {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.todo-form input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.todo-form input:focus {
+  border-color: #007bff;
+}
+
+.todo-form button {
+  padding: 12px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.todo-form button:hover {
+  background-color: #0056b3;
+}
+
+/* List Styling */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Item Styling */
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  font-size: 18px;
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-item span {
+  color: #444;
+  word-break: break-word; /* Taaki lamba text wrap ho jaaye */
+  padding-right: 15px;
+}
+
+.todo-item .buttons {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0; /* Buttons ko shrink nahi hone dena */
+}
+
+.todo-item button {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.todo-item .edit-btn {
+  background-color: #ffc107;
+}
+.todo-item .edit-btn:hover {
+  background-color: #e0a800;
+}
+
+.todo-item .delete-btn {
+  background-color: #dc3545;
+}
+.todo-item .delete-btn:hover {
+  background-color: #c82333;
+}
+
+/* Edit Mode Styling */
+.todo-item .edit-input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 17px;
+  margin-right: 10px;
+}
+
+.todo-item .save-btn {
+  background-color: #28a745;
+}
+.todo-item .save-btn:hover {
+  background-color: #218838;
+}
+
+/* YEH DO STYLE RULES ADD KAR DO */
+
+/* Completed task text ke liye */
+.todo-item .completed-text {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Naye complete button ke liye */
+.todo-item .complete-btn {
+  background-color: #17a2b8;
+}
+.todo-item .complete-btn:hover {
+  background-color: #138496;
+}

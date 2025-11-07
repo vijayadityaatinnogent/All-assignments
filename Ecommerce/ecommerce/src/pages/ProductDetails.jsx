@@ -14,8 +14,13 @@ export default function ProductDetails() {
   if (!product) return <p className="text-center mt-10">Loading...</p>;
 
   return (
-    <div className="max-w-3xl mx-auto mt-8 bg-white p-4 rounded-xl shadow">
+    <>
+    <div className="flex pl-8">
       <Link to="/" className="text-blue-500 underline text-sm">← Back</Link>
+
+    </div>
+
+    <div className="max-w-3xl mx-auto mt-8 bg-gray-100 p-4 rounded-xl shadow-lg border border-gray-200">
       <div className="flex flex-col md:flex-row gap-6 mt-4">
         <img
           src={product.image}
@@ -34,5 +39,5 @@ export default function ProductDetails() {
         </div>
       </div>
     </div>
-  );
+</>  );
 }

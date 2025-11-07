@@ -1,11 +1,14 @@
 import {ShoppingCart, Bell, User} from "lucide-react";
+import {Link} from "react-router-dom";
 
 export default function Header() {
 
     return (
         <header className="bg-blue-600 text-white flex justify-between items-center p-4 shadow-md">
             <div className="flex items-center gap-3">
-                <img src="/logo.jpg" alt="Logo" className="w-10 h-10 rounded-lg  mr-2 cursor-pointer" />
+                <Link to="/">
+                    <img src="/logo.jpg" alt="Logo" className="w-10 h-10 rounded-lg  mr-2 cursor-pointer" />
+                </Link>
             <h1 className="text-xl font-bold">
                 E-Commerce Store
             </h1>
